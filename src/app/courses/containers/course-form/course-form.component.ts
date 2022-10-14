@@ -38,10 +38,8 @@ export class CourseFormComponent implements OnInit {
   }
 
   onSubmit(){
-
     this.service.save(this.form.value)
       .subscribe(result => this.onSuccess(), error => this.onError());
-
   }
 
   onCancel(){
@@ -49,16 +47,12 @@ export class CourseFormComponent implements OnInit {
   }
 
   private onError(){
-
     this.snackBar.open('Erro ao salvar curso','', {duration: 5000});
-
   }
 
   private onSuccess(){
-
     this.snackBar.open('Curso Salvo com sucesso!','', {duration: 5000});
     this.onCancel();
-
   }
 
 }
